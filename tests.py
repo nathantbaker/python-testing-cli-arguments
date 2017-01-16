@@ -1,15 +1,29 @@
-print("I'm the tests page")
+import unittest
+from lootbag import *
 
-# This is only an example. If I find this code in your project
-#  I will make you go back and delete it and write your own test.
-# def test_toys_for_child_can_be_added_to_bag ()
-# {
-#     lootBag = Bag()
-#     lootBag.add_toy_for_child("kite", "suzy");
-#     self.assertEqual("kite", lootBag.child_items("suzy")[0]);
-# }
-# Items can be added to bag, and assigned to a child.
-# Items can be removed from bag, per child. Removing ball from the bag should not be allowed. A child's name must be specified.
-# Must be able to list all children who are getting a toy.
-# Must be able to list all toys for a given child's name.
-# Must be able to set the delivered property of a child, which defaults to false to true.
+# check for issues
+class check_for_issues(unittest.TestCase):
+
+    # check if you can add child name
+    def test_if_you_can_set_child_name(self):
+
+        test_name = loot.add_name('Larry')
+        self.assertEqual(test_name, 'Larry')
+
+    # check if you can add toys
+    def test_if_you_can_add_toys(self):
+
+        test_toys = loot.add_toys('meth', 'motorcycle', 'burning hot liquids')
+        self.assertIn('meth', test_toys)
+
+    # Items can be removed from bag, per child. Removing ball from the bag should not be allowed. A child's name must be specified.
+
+    # Must be able to list all children who are getting a toy.
+
+    # Must be able to list all toys for a given child's name.
+
+    # Must be able to set the delivered property of a child, which defaults to false to true.
+
+if __name__ == '__main__':
+    unittest.main()
+
