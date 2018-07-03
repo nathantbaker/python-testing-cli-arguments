@@ -8,19 +8,26 @@ def main(args):
 if __name__ == "__main__":
   main(sys.argv[1:])
 
-# Setup a Lootbag as a definition
-loot = {
-    'name': 'unnamed child',
-    'toys': list()
-    }
+# Setup a Lootbag as a definition to store temporary data
 
-#print key and values
-for key in loot:
-    if key == 'name':
-        print('Name: %s' % loot[key])
-    elif key == 'toys':
-        print('Toys: %s' % loot[key])
 
+
+class loot():
+
+    def add_toys(name, toys):
+
+        bag = {}
+        bag['name'] = name
+        bag['toys'] = toys
+
+        #print key and values
+        for key in bag:
+            if key == 'name':
+                print('Name: %s' % bag[key])
+            elif key == 'toys':
+                print('Toys: %s' % bag[key])
+
+loot.add_toys('Frank', ['Meth', 'Spiders', 'Hot Liquids'])
 
 
   # working with files
